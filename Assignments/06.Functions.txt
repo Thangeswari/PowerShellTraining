@@ -1,0 +1,10 @@
+1.function CurrentDay ()
+{
+    (Get-Date).DayOfWEek
+}
+2. CurrentDay 
+3. function CurrentDay ([DateTime]$param)
+{
+     ($param).DayOfWEek
+}
+4. CurrentDay '25 January 2016'

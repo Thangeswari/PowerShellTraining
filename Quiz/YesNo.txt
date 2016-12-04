@@ -1,0 +1,16 @@
+1. $ is used to comment the lines in PowerShell.
+2. PowerShell is easy to learn.
+3. I am good in coding.
+4. I am going abroad for an important assignment.
+5. Get-Process powershell => displays the details of powershell process.
+6."123".Count displays the length of the string.
+7.&("note"+"pad") command opens notepad
+8. Start-Sleep -Seconds 5 waits for 5 seconds.
+9.Get-History shows the history of you.
+10.'p'.CompareTo('p') returns false.
+11.$HOME.GetType() displays the datatype as String.
+12. $a=@() creates an empty array.
+13. $ipconfig.length displays the count of elements in the array.
+14. Get-Process| Get-Member displays the methods of Get-Process.
+14. Get-Process| Get-Member displays the properties of Get-Process.
+15. Get-Content -TotalCount 10 -Path C:\demo\Assignments.txt gets the first 10 lines of file.

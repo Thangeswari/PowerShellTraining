@@ -1,0 +1,7 @@
+mkdir c:\demoPowershell
+cd c:\demoPowershell
+"a" + "b"
+2+1 > out.txt
+23 >> out.txt
+4GB / 720MB
+Get-Process(Quit)

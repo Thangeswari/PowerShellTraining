@@ -1,0 +1,59 @@
+Games to learn PowerShell
+1. What is the output of
+$array="123".Split("2")
+$x=$array[0];
+"The answer to this clue is near"
+"Row number $x and Student Number $x to the right"
+
+Ans 1:Row Number 1 Student 1 from right
+
+2. Run the ps1 file located at "c:\treasureHunt\Clue2.ps1"
+
+Write-Host("Congratulations on getting closer to the treasure");
+Write-Host("Write the code to find the square root of 50625.");
+Write-Host("Look at whiteboard for 3rd clue");
+
+Ans 2:[System.Math]::sqrt(50625)
+
+3. Use the answer from Clue 2 and subtract 200.
+
+Ans 3:[int]$result=[System.Math]::sqrt(50625) - 200;
+
+4.$missingletter1=[char](138-$result)
+
+Ans 4: $missingletter1 q
+
+5.$missingletter2=[char](92+$result)
+
+Ans 5: $missingletter2 u
+6.$missingletter3=[char]($result*4+1)
+
+Ans 6:$missingletter3 e
+
+7.$missingletter4=[char]($result*4+15)
+
+Ans 7:$missingletter4 s
+
+8.$missingLetter5=[char](2900/$result)
+
+Ans 8: $missingLetter5 t
+9.$missingWord1=$missingletter1+$missingletter2+$missingletter3+$missingletter4+$missingletter5
+
+Ans 9: $missingWord1 quest
+
+10.$missingLetter=[char](2850/$result)
+
+Ans 10:$missingLetter r.
+
+11.$lastLetter = $result
+Write-Host " Re$missingWord1 the traine$missingLetter to give last clue"
+
+Ans 11:Request the trainer to give last clue
+
+
+
+Final :
+$array=@(87,101,32,97,114,101,32,115,117,112,101,114,98)
+[char[]]$array + "coders"
+
+

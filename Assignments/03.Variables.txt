@@ -1,0 +1,5 @@
+1.$intA
+2.$intA=1..10
+3.$intA
+4.$result=10*10
+5.“Result = $result”

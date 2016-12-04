@@ -1,0 +1,1 @@
+﻿ise -file ".\1SimpleTemp.ps1, .\2testparamStart.ps1, .\3testparamEnd.ps1, .\4MainCodeStart.ps1, .\5MainCodeEnd.ps1, .\6MakeObjects.ps1"

@@ -1,0 +1,33 @@
+﻿ #Get PowerShell SnapINs
+ Get-PSSession                                                                   
+ #View All Loaded Assemblies
+ [appdomain]::CurrentDomain.GetAssemblies()                                      
+             
+ [appdomain]::CurrentDomain.GetAssemblies()| sort -Property FullName | select FullName
+                                                                    
+ #Get Modules
+ Get-Module   
+ Import-Module "\\w15-sp\c`$\Demo\Scripts\06.CallFunctionDemo.psm1"  
+ Get-Module               
+ Get-Module                                                                      
+ Get-Command -Module "06.CallFunctionDemo"
+ $module= Get-Module -Name "06.CallFunctionDemo"  
+ $module|gm
+ $module.ExportedCommands
+
+New-ModuleManifest -Path "C:\demoPowershell\SimpleFuncAsModule.psd1" -PassThru `
+-Author "Easwari"  -Copyright "@2016 CopyWrite" `
+-ModuleVersion 1.0 -Description 'The PowerShell simple module' `
+-PowerShellVersion 5.0 -RootModule .\SimpleFuncAsModule.psm1 
+Import-Module "C:\demoPowershell\SimpleFuncAsModule.psd1"  
+Import-Module "C:\demoPowershell\SimpleFuncAsModule.psm1"
+Get-Module SimpleFuncAsModule
+Get-Command -Module SimpleFuncAsModule
+(Get-Module SimpleFuncAsModule).Author
+(Get-Module SimpleFuncAsModule).Description
+(Get-Module SimpleFuncAsModule).ExportedFunctions
+CountArgs
+CountArgs 1
+CountArgs 2 3 
+
+ 

@@ -1,0 +1,5 @@
+1. dir|gm
+2. dir|select Name,LastWriteTime
+3. dir|select Name,@{'name'='FileSizeKB';'Expression'={$_.Length / 1KB}}
+4. dir|Where-Object{$_.Length -lt 50KB}
+5. Get-Process | sort Name | group Name

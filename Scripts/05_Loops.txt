@@ -1,0 +1,31 @@
+$x=1;$y=2;
+if ($x -lt $y)
+{
+    "$x"
+}
+else
+{
+    "$y"
+}
+
+#Do loop
+do {
+  $Input = Read-Host "Your homepage"
+} while (!($Input -like "www.*.*"))
+#Iterations
+$i=0;for (;$i -lt 5;) {  $i++; $i}
+$i = 0 
+$i=10;while ($i –lt 15) {  $i++;  $i} 
+
+#Switch
+[System.DayOfWeek]$DOW=[System.DayOfWeek]::Monday
+ switch ($DOW)
+ {
+     "Sunday"         {"It's Sunday"; continue } 
+     "Monday"        {"It's Monday"; continue } 
+     "Tuesday"        {"It's Tuesday"; continue } 
+     "Wednesday"  {"It's Wednesday"; continue } 
+     "Thursday"      {"It's Thursday"; continue } 
+     "Friday"           {"It's Friday"; continue } 
+     "Saturday"      {"It's Saturday"; continue } 
+ }

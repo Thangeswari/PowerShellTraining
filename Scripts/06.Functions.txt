@@ -1,0 +1,45 @@
+function DisplayABC{"abc"};
+function myPing{ping $args};
+function addNumbers($a,$b){$a+$b};
+function addNumbers($a=10,$b=10){$a+$b};
+function addNumbers([int]$a=10,[int]$b=10){$a+$b};
+function SwitchON([switch]$a){if($a){"ON"}}
+####Call By Value/Ref Demo
+$original = 10;
+Write-Host "Original Value is $original"
+function CallByValue($a){$a=$a*10;$a}
+CallByValue($original)
+Write-Host "After call by value, Original Value is $original"
+function CallByRef([REF]$a){$a.value=$a.value*10;$a}
+CallByRef([REF]$original)
+Write-Host "After call by reference, Original Value is $original"
+
+#Display all functions
+dir function:
+
+#Math functions
+ [System.Math]::Truncate(123.89796)
+ [System.Math]::PI
+[System.Math]::Sqrt(4)
+Function NextFreeDrive
+{
+For ($x=67; $x -le 90; $x++)
+{
+$driveletter = [char]$x + ":"
+If (!(Test-Path $driveletter))
+{
+$driveletter
+break
+}
+}
+}
+#Function to count Arguments
+function CountArgs{
+If ($args -ne $null) {
+"You specified: $args"
+"Argument number: $($args.count)"
+$args | ForEach-Object { $i++; "$i. Argument: $_" }
+} Else {
+"You haven't specified any arguments!"
+}
+}

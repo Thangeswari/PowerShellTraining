@@ -1,0 +1,5 @@
+1. Clears the screen
+2. gci,ls,dir 
+3. Todays Date
+4. help Get-help -online
+5. alias dir

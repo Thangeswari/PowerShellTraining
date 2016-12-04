@@ -1,0 +1,19 @@
+1. Get WmiObject for Win32_Bios
+Get-WmiObject Win32_BIOS
+
+2.Get the free space of c: drive using [wmi]'Win32_LogicalDisk="C:"'
+$disk = [wmi]'Win32_LogicalDisk="C:"'
+$disk.FreeSpace 
+
+(or)
+([wmi]'Win32_LogicalDisk="C:"').FreeSpace
+
+3. Command to Connect to PowerShell of remote machine named w15-sp 
+Enter-PSSession –ComputerName w15-sp
+mstsc /v:w15-sp
+
+4. The Command to view C: drive space of w15-sp
+Invoke-Command –ComputerName w15-sp{Get-Volume}
+
+5. Get-Process of a remote machine w15-sp
+Invoke-Command –ComputerName w15-sp{Get-Process}

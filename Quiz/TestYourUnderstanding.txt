@@ -1,0 +1,85 @@
+1. What is the command to clear the screen
+cls
+notepad
+calc
+cleat
+
+2. What is the command to display the date
+Get-Date
+Get-Today
+Today
+Now
+
+3. Which of the following command uses pipelining feature
+calculator
+Get-Process | select *
+##comment
+Get-ABC
+
+4. Does PowerShell support remoting?
+Yes
+No
+
+5. What is the command to search for a command?
+Get-Help
+Get-Command
+Search-Command
+Command
+
+6. What is output of "a" + "b"
+ab
+a b
+ba
+c
+
+7. What is the command to invoke command in another computer?
+Get-Command
+Invoke-Command
+Insert-Command
+Ingenius-Command
+
+8. What is the command to Export to CSV file?
+Export-Csv
+Import-CSV
+ABC
+Read-Excel
+
+9. Which command replaces “Imperfect” to “I am perfect”
+"Imperfect" -replace "Im" ,"I am "
+"Imperfect" -replace "Im" ,"Iam "
+"Imperfect" -replace "Im" ,"I am "
+"Imperfect" -regex "Im" ,"am "
+
+10.What is output of ([wmi]'Win32_LogicalDisk="C:"').FreeSpace
+Free space of C: drive
+Name of C: drive
+
+11. Get-EventLog has an option to view latest 5 Powershell logs using the following command:
+Get-EventLog -LogName 'Windows PowerShell' -Newest 5
+Get-EventLog -LogName 'Windows PowerShell' -Newest 5
+Get-EventLog -LogName 'Windows PowerShell' -Last 5
+Not Supported
+
+12.What is the date 30 days or one month from now?
+(Get-Date).AddMonths(-1)
+(Get-Date).AddDays(-30)
+(Get-Date).AddMonths(1)
+(Get-Date).Subtract(30)
+
+13. Which of the following words are conditional?
+if
+else
+switch
+where
+
+14.Which of the following is true about PowerShell?
+Object Based
+Text Based
+Scripting Language
+Scripting Environment
+
+15. Which command is used to fetch other commands?
+Get-Help
+Get-Command
+Get-Fetch
+Get

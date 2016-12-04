@@ -1,0 +1,2 @@
+﻿powershell.exe -Command "&{.\BatchDemo.ps1}"
+pause

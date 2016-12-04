@@ -1,0 +1,22 @@
+$result=ipconfig
+$result -is [Array]
+$result.Count
+$result | select-string "Address"
+#Create new Array
+$a=1,2,3
+$b=1..5
+$a=@()
+$a=,1
+$a[0]
+$mixed=“a”,1,2,(Get-Date)
+$mixed[1,3]
+$a+=5
+[int[]]$array = 1,2,3
+#HashTable
+#Hashtable
+$FruitsColorPair=@{Orange="Orange";Apple="Red"}
+$FruitsColorPair["Orange"]
+$FruitsColorPair["Orange","Apple"]
+$FruitsColorPair.Banana="yellow"
+$FruitsColorPair.Apple="Green"
+$FruitsColorPair.Remove("Apple")

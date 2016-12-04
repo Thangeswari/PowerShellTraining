@@ -1,0 +1,1 @@
+﻿Get-Process | select Name,Path| ConvertTo-Html -Property Name,Path -Body "Process Details"-Title "Process Details" | Set-Content htmldata.htm

@@ -1,0 +1,8 @@
+Enter-PSSession –ComputerName w15-sp
+Hostname,ipconfig
+mstsc /v:w15-dc
+#Execute commands on other machines
+Get-EventLog –LogName System –new 3
+Invoke-Command –ComputerName w15-sp,w15-dc{Get-EventLog –LogName System –new 3}
+Invoke-Command –ComputerName w15-sp,w15-dc{Get-EventLog –LogName System –new 3} |sort timewritten |format-table –Property TimeWritten,Message -AutoSize
+Invoke-Command [–ComputerName w15-sp]{Get-EventLog –LogName System –new 3}|gm

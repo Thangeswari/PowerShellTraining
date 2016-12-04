@@ -1,0 +1,9 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"              
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Name="label" Content="" HorizontalAlignment="Left" Margin="93,219,0,0" VerticalAlignment="Top"/>
+        <Button Name="button" Content="Click" HorizontalAlignment="Left" Margin="194,289,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

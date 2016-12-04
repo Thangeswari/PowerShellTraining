@@ -1,0 +1,16 @@
+$Disk = Get-WmiObject win32_logicaldisk ;
+Foreach ($Drive in $Disk) 
+{
+ 
+switch($Drive.DriveType)
+{
+1{$Drive.DeviceID +" Unknown" }
+2{$Drive.DeviceID +" Floppy or Removable Drive" }
+3{$Drive.DeviceID +" Hard Drive" } 
+4{$Drive.DeviceID +" Network Drive" }
+5{$Drive.DeviceID +" CD" }
+6{$Drive.DeviceID +" RAM Disk" } 
+}
+
+
+}

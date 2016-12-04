@@ -1,0 +1,110 @@
+$file="d:\nonexistant"
+if (-not (Test-Path $file)) 
+{
+    throw [System.IO.FileNotFoundException] "$file not found."
+}
+#ErrorAction
+Get-ChildItem "c:\demo" -ErrorAction SilentlyContinue
+#Simple Exception
+try
+{
+    1/0
+}
+catch [DivideByZeroException]
+{
+    Write-Host "Divide by zero exception"
+}
+catch [System.Net.WebException],[System.Exception]
+{
+    Write-Host "Other exception"
+}
+finally
+{
+}
+
+#Load WEb Exception
+try {
+    $w = New-Object net.WebClient
+    $d = $w.downloadString('http://om')
+    Write-Host "Loaded successfully"
+}
+catch [System.Net.WebException] {
+    Write-Host $_.Exception.ToString()
+    Write-Host "Load web failed"
+}
+
+#No Argument found
+function ArgNullException($param1)
+{
+if($param1 -eq $null)
+{
+throw [System.ArgumentNullException] "No argument found"
+}
+$param1
+}
+ArgNullException
+
+#User Defined Exception supported in v5
+
+class TempIsZeroException: Exception
+{
+   TempIsZeroException([string] $message): base($message)
+   {
+   }
+}
+
+[int] $temperature = 1;
+if($temperature -eq 0)
+{
+  
+         throw [TempIsZeroException] "Zero Temperature found"
+      }
+       else
+      {
+         Write-Host "Temperature: $temperature"
+      }
+
+  
+#Database
+try{ 
+
+$sqlCOnnection = New-Object System.Data.SqlClient.SqlConnection 
+
+$sqlCOnnection.ConnectionString="Data Source=W15-SP;Initial Catalog=master;Integrated Security=True" 
+
+$sqlCommand =New-Object System.Data.SqlClient.SqlCommand 
+
+$sqlCommand.CommandText="select top 10 name from sys.tables" 
+
+$sqlCommand.Connection=$sqlCOnnection 
+
+$sqlCOnnection.Open() 
+
+$sqlCommand.ExecuteNonQuery() 
+
+$sqlAdapter= New-Object System.Data.SqlClient.SqlDataAdapter 
+
+$dataSet= New-Object System.Data.DataSet 
+
+$sqlAdapter.SelectCommand=$sqlCommand 
+
+$sqlAdapter.Fill($dataSet); 
+
+$sqlCOnnection.Close() 
+
+$dataSet.Tables[0] 
+
+} 
+
+catch [System.Data.SqlClient.SqlException] 
+
+{ 
+
+#change master to master1 
+
+"Connection failed" 
+
+"Message details:: $_" 
+
+}  
+

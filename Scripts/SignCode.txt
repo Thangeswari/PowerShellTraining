@@ -1,0 +1,5 @@
+$oldCert = dir cert:\currentuser\TrustedPublisher
+Set-Location cert:\currentuser\My
+New-SelfSignedCertificate -CloneCert $oldcert
+$cert= dir Cert:\CurrentUser\My
+Set-AuthenticodeSignature -Certificate $cert -FilePath D:\scripts\abc.ps1

@@ -1,0 +1,20 @@
+1. Search for string “pilot” in “Autopilot” 
+"Autopilot" -match "pilot"
+
+2. Replace “Imperfect” to “I am perfect”
+"Imperfect" -replace "Im" ,"I am "
+
+3.What is the result of  “Microsoft” –cmatch “Soft”
+False
+
+4. Compare two strings “Abc” and “Bcd”
+"Abc" -match "Bcd"
+
+5. Do validation for Email address of format “<firstname>.<lastname>@microsoft.com".
+Example : 
+$regEx = ......
+"happy.you@microsoft.com" -match $regEx
+
+$regEx = "^[a-z]+\.[a-z]+@microsoft.com$"
+"happy.you@microsoft.com" -match $regEx 
+

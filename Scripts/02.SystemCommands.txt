@@ -1,0 +1,11 @@
+Test-Path "c:\demoPowershell"
+Cls
+Dir
+Notepad
+Get-Command *copy*
+Get-Verb
+&("note"+"pad")
+calc
+Get-Date
+alias clear
+$name = Read-Host 'What is your username?‘

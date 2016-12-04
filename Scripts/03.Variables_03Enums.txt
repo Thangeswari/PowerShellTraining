@@ -1,0 +1,28 @@
+$now=Get-Date;$now.DayOfWeek; ($Now.DayOfWeek).GetType() 
+[System.Enum]::GetNames( [System.DayOfWeek] )
+#Switch on Enum
+[System.DayOfWeek]$DOW=[System.DayOfWeek]::Monday
+ switch ($DOW)
+ {
+     "Sunday"         {"It's Sunday"; continue } 
+     "Monday"        {"It's Monday"; continue } 
+     "Tuesday"        {"It's Tuesday"; continue } 
+     "Wednesday"  {"It's Wednesday"; continue } 
+     "Thursday"      {"It's Thursday"; continue } 
+     "Friday"           {"It's Friday"; continue } 
+     "Saturday"      {"It's Saturday"; continue } 
+ }
+Enum Coordinates
+{
+X = 0;
+Y = 1;
+Z = 2;
+} 
+[Coordinates]::X.value__
+
+Add-Type -TypeDefinition "public struct XY{public int x;public int y;}"
+$xy=New-Object XY;$xy.x=1; $xy.y=1;$xy
+
+#If POwershell v5 not available try below code
+Add-Type -TypeDefinition "public enum Color{Red,Green,Blue}"
+[Color]$myColor=[Color]::Blue

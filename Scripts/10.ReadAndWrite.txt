@@ -1,0 +1,12 @@
+﻿$path = "C:\OmShakti\BestFromDurga\SharePoint\SharePowershell\Tutorial\BasicsTraining\Scripts"
+#clear existing code file
+if(Test-Path -Path "C:\demoPowershell\Codes.txt")
+{
+Clear-Content -Path "C:\demoPowershell\Codes.txt" 
+}
+$files = Get-ChildItem -Path $path 
+foreach($file in $files)
+{
+$file|select Name | Out-File -FilePath "C:\demoPowershell\Codes.txt" -Append
+Get-Content -Path ($file).FullName | Out-File -FilePath "C:\demoPowershell\Codes.txt" -Append
+}

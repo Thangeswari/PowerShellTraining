@@ -1,0 +1,7 @@
+Get-History > "d:\scripts\history.txt"
+$file = dir "D:\scripts\history.txt"
+"The file size is $($file.length) bytes"
+"The file size is $(($file.length)/ 1GB) GB"
+
+ (Get-Content -Path .\abc.csv)[1]
+

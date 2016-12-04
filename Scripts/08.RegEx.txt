@@ -1,0 +1,9 @@
+ "Microsoft" –match "soft"
+$regex = "^[a-z]+\.[a-z]+@contoso.com$"
+If ($email –notmatch $regex) {
+  Write-Error "Invalid e-mail address $email" 
+}
+"Carl Smith" -replace "Carl","Eddie"
+$text = "You are the best" 
+[regex]::split($text, "are")
+[regex]::split($text," ")

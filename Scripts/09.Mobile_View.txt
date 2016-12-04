@@ -1,0 +1,6 @@
+Get-WindowsFeature *powershell*
+Install-WindowsFeature  WindowsPowerShellWebAccess
+Get-help *pswa*
+Install-PswaWebApplication
+Add-PswaAuthorizationRule –UserName –Destination –ConfigurationName
+Start iexplore “https://pwa/pswa”

@@ -1,0 +1,21 @@
+1.Get-WmiObject -list
+2.Get-WmiObject Win32_BIOS 
+3.Get-WmiObject Win32_OperatingSystem
+4.$disk = [wmi]'Win32_LogicalDisk="C:"'
+  $disk.FreeSpace 
+5.Get-WmiObject -query `
+'select caption,commandline from Win32_Process where name like "powershell%"'
+6.( Get-WmiObject -Class Win32_volume|  where {$_.name -eq "C:\"}).DefragAnalysis().DefragAnalysis
+7. invoke-wmimethod -path win32_process -name create -argumentlist notepad.exe
+9. set-wmiinstance -class win32_environment -argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"} -whatif
+10. Get-WmiObject Win32_ComputerSystem
+Get-WmiObject Win32_DiskDrive 
+Get-WmiObject Win32_Environment
+Get-WmiObject Win32_FileSpecification | select * -first 1
+Get-WmiObject Win32_GroupUser | select * -first 1
+Get-WmiObject Win32_LogicalDisk
+Get-WmiObject Win32_NTDomain 
+Get-WmiObject Win32_NetworkAdapter
+Get-WmiObject Win32_Product | select * -first 1
+Get-WmiObject Win32_UserAccount | select * -first 1
+Get-WmiObject Win32_Volume | select * -first 1

@@ -1,0 +1,46 @@
+[DirectoryServices.DirectoryEntry]
+$domain = New-Object DirectoryServices.DirectoryEntry("LDAP://10.10.10.1","domain\user", "secret")
+$domain.name
+$domain.distinguishedName
+#Code to get username and password
+$cred = Get-Credential
+$pwd = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($cred.Password))
+$domain = New-Object DirectoryServices.DirectoryEntry("LDAP://10.10.10.1",$cred.UserName, $pwd)
+$domain.name
+trap { $script:err = $_ ; continue } &{
+$domain.Bind($true); $script:err = $null }
+if ($err.Exception.ErrorCode -ne -2147352570)
+{
+Write-Host -Fore Red $err.Exception.Message
+break
+}
+else
+{
+Write-Host -Fore Green "Connection established."
+}
+
+#Code to access Users
+$ldap = "/CN=Users,DC=contoso,DC=com"
+$cred = Get-Credential
+$pwd = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($cred.Password))
+$users = New-Object DirectoryServices.DirectoryEntry("LDAP://10.10.10.1$ldap",$cred.UserName, $pwd)
+$users
+
+#Guest Account
+$ldap = "CN=Guest,CN=Users"
+$domain = [ADSI]""
+$dn = $domain.distinguishedName
+$guest = [ADSI]"LDAP://$ldap,$dn"
+$guest | Format-List *
+
+#Search for Container
+$domain = [ADSI]""
+$users = $domain.psbase.Children.Find("CN=Users")
+$useraccount = $users.psbase.Children.Find("CN=Administrator")
+$useraccount.Description
+
+#Search for Elements
+$UserName = "*mini*"
+$searcher = New-Object DirectoryServices.DirectorySearcher([ADSI]"")
+$searcher.filter = "(&(objectClass=user)(sAMAccountName= $UserName))"
+$searcher.findall()

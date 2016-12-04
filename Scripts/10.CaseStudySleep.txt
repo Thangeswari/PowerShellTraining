@@ -1,0 +1,12 @@
+$timeout = new-timespan -Minutes 1
+$sw = [diagnostics.stopwatch]::StartNew()
+while ($sw.elapsed -lt $timeout){
+    if (test-path c:\demoPOwershell\somefile.txt){
+        write-host "Found a file!"
+        return
+        }
+ 
+    start-sleep -seconds 10
+}
+ 
+write-host "Timed out"

@@ -1,0 +1,42 @@
+1. Write a code to catch DivideByZero exception.
+try
+{
+    1/0
+}
+catch [DivideByZeroException]
+{
+    Write-Host "Divide by zero exception"
+}
+
+2. In Windows Powershell ISE , Write a function  fnFileExistsOrNot($file)  that catches the Exception when a file is not found. 
+function fnFileExistsOrNot($file)
+{
+    try
+    {
+            if (-not (Test-Path $file)) 
+        {
+            throw [System.IO.FileNotFoundException] "$file not found."
+        }
+        else
+        {
+            "File $file exists"
+        }
+
+    }
+    catch [System.IO.FileNotFoundException]
+    {
+        Write-Host "$file not found."
+    }
+    
+}
+
+3. Compile the code /Run the script 
+Press F5 or click the green triangle button
+
+4. In the shell window what is the resut of following command fnFileExistsOrNot "C:\"
+
+File c:\ exists
+
+5. In the shell window what is the resut of following command fnFileExistsOrNot "C:\assignmentsNew"
+
+C:\assignmentsNew not found.

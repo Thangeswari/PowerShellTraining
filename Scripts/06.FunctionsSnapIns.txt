@@ -1,0 +1,3 @@
+Get-PSSnapIn
+Get-PSSnapIn -Registered
+Add-PSSnapIn "Microsoft.SharePoint.PowerShell"

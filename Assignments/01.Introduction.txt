@@ -1,0 +1,6 @@
+1. mkdir "c:\assignments"
+2. "I am infinite" > "c:\assignments\Intro1.txt"
+3. "I am highly intelligent" >> "C:\assignments\Intro1.txt"
+4. cd "c:\assignments"
+5. cat Intro1.txt
+6. Get-Random

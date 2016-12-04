@@ -1,0 +1,7 @@
+1. $intArray = 1,3,2,4,4,5
+2. $intArray |?{$_ -gt 3}
+3. switch(Get-Random){{$_ % 2 -eq 1}{"$_ is Odd";break}default{"$_ is Even";break}}
+4. for ($i = 1; $i -le 10; $i++){ $i }
+5. do{    $input=Read-Host "Do you enjoy PowerShell:[Yes/No]?"}while ($input -ne "Yes")
+
+

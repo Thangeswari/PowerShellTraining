@@ -1,0 +1,28 @@
+$email = "sample@powershell.com" 
+$v = Get-Variable email 
+$pattern = "\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b" 
+$v.Attributes.Add($(New-Object 'System.Management.Automation.ValidatePatternAttribute'-argumentList $pattern)) 
+$email = valid@email.de
+$email = "invalid@email"
+
+#Other Validations
+#ValidateNotNullAttribute
+
+ValidateNotNullOrEmptyAttribute
+ValidatePatternAttribute
+#ValidateRangeAttribute
+$age = 18 
+$v = Get-Variable age
+$v.Attributes.Add($(New-Object 'System.Management.Automation.ValidateRangeAttribute'  -argumentList 5,100))
+ $age = 30 
+$age = 110
+
+#ValidateSetAttribute
+$option = "yes" 
+$v = Get-Variable option 
+$v.Attributes.Add($(New-Object 'System.Management.Automation.ValidateSetAttribute'  -argumentList "yes", "no", "perhaps"))
+ $option = "no" 
+$option = "perhaps" 
+$option = "don't know"
+
+

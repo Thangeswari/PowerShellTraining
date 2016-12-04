@@ -1,0 +1,9 @@
+Dir|sort length|select Name,Length
+Dir -Path "C:\demoPowershell"|ForEach-Object{$_.FullName}
+Get-process notepad| gm
+Dir "C:\demoPowershell"| ?{$_.length -gt 100}
+ 
+#New Column
+Get-Process –Name notepad | select -Property Name,@{name=‘ProcessName’;expression={$_.Name}}
+dir -Path D:\scripts | select Length,@{n='LengthGB';e={$_.Length/ 1GB}}
+

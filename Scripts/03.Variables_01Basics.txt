@@ -1,0 +1,62 @@
+#Variable examples
+$HOME
+Dir env:
+$a=10
+$b=20
+$sum = $a+$b
+$sum
+"The sum is $sum"
+${A,’}=1
+$a=Get-Childitem -Path d:\
+$a=$b=$c=1
+#Swapping Variables
+$a=1;$b=2
+$a,$b=$b,$a
+$a,$b
+#To view all variables
+dir variable:
+dir variable:a*
+#Test if variable $a exists
+Test-Path variable:\a
+#Clear variable
+$a=$null
+Clear-Variable a
+get-variable c
+New-Variable d value 12
+Remove-Variable d
+#Advanced Variables
+#Write Protected Variable
+New-Variable -Name ConstVariable -Value 100 -Option ReadOnly
+#delete variable
+del variable:\ConstVariable -force
+#View Keyword Variables
+$PSHOME
+$env:windir
+$a > "D:\scripts\a11.txt"
+$date= "January 25 2016"
+[datetime]$date = " January 25 2016"
+$date.AddDays(60)
+[boolean]$flag = $true
+ [byte]$value=12
+[char]$a='t'
+[decimal]$a = 12 
+[guid]$id=[System.Guid]::NewGuid()
+$id.toString()
+#Hashtable
+$FruitsColorPair=@{Orange="Orange";Apple="Red"}
+$FruitsColorPair["Orange"]
+[int16]$value = 1000
+ [int32]$value = 100000
+[int64]$value=4GB
+[string]$text="you"
+#unsigned 
+[uint16]$value = 1000
+ [uint32]$value = 100000
+[uint64]$value=4GB
+#Add description
+Set-Variable -Name dob -Description "This holds the date of birth"
+[datetime]$dob="January 25 2016"
+Get-Variable -Name dob | format-list
+
+
+

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+	
+	<Configuration>
+	    <ViewDefinitions>
+	<View>
+	            <Name>Inventory</Name>
+	            <ViewSelectedBy>
+	                <TypeName>Jason.InventoryObject</TypeName>
+	            </ViewSelectedBy>
+	            <TableControl>
+	                <TableHeaders>
+	                    <TableColumnHeader>
+	                        <Label>ComputerName</Label>
+	                        <Width>20</Width>
+	                        <Alignment>left</Alignment>
+	                    </TableColumnHeader>
+	                    <TableColumnHeader>
+	                        <Label>FreeSpace</Label>
+	                        <Width>5</Width>
+	                        <Alignment>right</Alignment>
+	                    </TableColumnHeader>
+	                </TableHeaders>
+	                <TableRowEntries>
+	                    <TableRowEntry>
+	                        <TableColumnItems>
+	                            <TableColumnItem>
+	                                <PropertyName>ComputerName</PropertyName>
+	                            </TableColumnItem>
+	                            <TableColumnItem>
+	                                <PropertyName>FreeSpace</PropertyName>
+	                            </TableColumnItem>
+	                        </TableColumnItems>
+	                    </TableRowEntry>
+	                </TableRowEntries>
+	            </TableControl>
+	        </View>	</ViewDefinitions>
+	</Configuration>
